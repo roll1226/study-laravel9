@@ -16,16 +16,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::get('/error-woops', function () {
     throw new \Exception('Woops');
 });
 
-Route::get('test-str-helper', function () {
+Route::get('/test-str-helper', function () {
     // return str('hello world')->upper();
     // return str('hello world')->slug();
     return str('hello world')->append(' and everyone else.');
+});
+
+Route::get('/redirect', function () {
+    return to_route('home');
 });
 
 Route::controller(PostsController::class)->group(function () {
