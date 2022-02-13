@@ -22,6 +22,12 @@ Route::get('/error-woops', function () {
     throw new \Exception('Woops');
 });
 
+Route::get('test-str-helper', function () {
+    // return str('hello world')->upper();
+    // return str('hello world')->slug();
+    return str('hello world')->append(' and everyone else.');
+});
+
 Route::controller(PostsController::class)->group(function () {
     Route::get('/posts', 'index');
     Route::get('/posts/{post}', 'show');
