@@ -3,7 +3,7 @@
 ## Usage
 
 ```bash
-$ git clone git@github.com:ucan-lab/docker-laravel.git
+$ git clone https://github.com/roll1226/study-laravel9.git
 $ cd study-laravel9
 $ make init
 ```
