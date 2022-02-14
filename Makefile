@@ -11,6 +11,8 @@ ps:
 	docker compose ps
 app:
 	docker compose exec app bash
+web:
+	docker compose exec web ash
 db:
 	docker compose exec db bash
 sql:
@@ -59,6 +61,10 @@ tinker:
 	docker compose exec app php artisan tinker
 test:
 	docker compose exec app php artisan test
+test-coverage:
+	docker compose exec app bash -c 'XDEBUG_MODE=coverage php artisan test --coverage'
+test-min:
+	docker compose exec app bash -c 'XDEBUG_MODE=coverage php artisan test --coverage --min=$(min)'
 optimize:
 	docker compose exec app php artisan optimize
 optimize-clear:
