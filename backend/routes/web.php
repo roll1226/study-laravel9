@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\PostState;
 use App\Http\Controllers\PostsController;
 use App\Models\Post;
 use App\Models\User;
@@ -20,7 +21,7 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
-Route::get('/error-woops', function () {
+Route::get('/woops', function () {
     throw new \Exception('Woops');
 });
 
@@ -47,3 +48,24 @@ Route::controller(PostsController::class)->group(function () {
 Route::get('/users/{user}/posts/{post}', function (User $user, Post $post) {
     return $post;
 })->scopeBindings();
+
+Route::get('/enum/{state}', function (PostState $state) {
+    // $post = new Post;
+    // $post->user_id = 1;
+    // $post->title = 'My title';
+    // $post->body = 'My body';
+    // $post->state = PostState::Draft;
+    // $post->save();
+    // return 'Down';
+
+
+    // $post = Post::inRandomOrder()->first();
+    // if ($post->state === PostState::Draft) {
+    //     return 'It is a draft.';
+    // } else {
+    //     return 'It is not a draft.';
+    // }
+
+
+    dd($state);
+});
