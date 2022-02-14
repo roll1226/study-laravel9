@@ -17,3 +17,6 @@ http://localhost
 ├── web
 └── db
 ```
+
+## YouTube 
+[Laravel 9 - Everything You Need to Know (In 45 Minutes)](https://youtu.be/GwunZ5sH2P8)
