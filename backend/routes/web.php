@@ -69,3 +69,7 @@ Route::get('/enum/{state}', function (PostState $state) {
 
     dd($state);
 });
+
+Route::get('/test/posts/{post}', function (Post $post) {
+    return $post;
+})->name('posts.show');
