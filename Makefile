@@ -121,5 +121,7 @@ create-migration:
 	docker compose exec app php artisan make:migration ${name}
 create-seeder:
 	docker compose exec app php artisan make:seeder ${name}
+create-factory:
+	docker compose exec app php artisan make:factory ${name}
 create-model:
-	docker compose exec app php artisan make:model ${name} --migration
+	docker compose exec app php artisan make:model ${name} --all

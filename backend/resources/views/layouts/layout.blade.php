@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" context="{{ csrf_token() }}">
 
-        <title>@yield('title')</title>
+        <title>投稿サービス - @yield('title')</title>
 
         <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">

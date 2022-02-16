@@ -21,7 +21,7 @@
                 ランキング
             </a>
             <a
-                href="/users"
+                href="/user_list"
                 class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white"
             >
                 ユーザ一覧
@@ -30,12 +30,12 @@
 
         <div>
             <a
-                href="#"
+                href="/sign_in"
                 class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0 hover:shadow-lg"
                 >Sign in</a
             >
             <a
-                href="#"
+                href="/sign_up"
                 class="inline-block text-sm px-4 py-2 leading-none border bg-white rounded text-teal-500 border-white mt-4 lg:mt-0 ml-4 lg:ml-2 hover:shadow-lg"
                 >Sign up</a
             >

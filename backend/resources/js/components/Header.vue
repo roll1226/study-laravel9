@@ -16,7 +16,7 @@
                     />
                 </svg>
                 <span class="font-semibold text-xl tracking-tight"
-                    >Tailwind CSS</span
+                    >Post SERVICE</span
                 >
             </div>
             <div class="block lg:hidden">

@@ -1,9 +1,7 @@
 @extends('layouts.layout')
 
-@section('title', 'ホーム')
+@section('title', 'Sign Up')
 
 @section('content')
-<p>
-    ホーム
-</p>
+<p>Sign Up</p>
 @endsection

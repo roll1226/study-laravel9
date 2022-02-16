@@ -21,6 +21,18 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('/new', function () {
+    return view('new');
+})->name('new');
+
+Route::get('/sign_in', function () {
+    return view('auth.signIn');
+})->name('signIn');
+
+Route::get('/sign_up', function () {
+    return view('auth.signUp');
+})->name('signUp');
+
 Route::get('/woops', function () {
     throw new \Exception('Woops');
 });
