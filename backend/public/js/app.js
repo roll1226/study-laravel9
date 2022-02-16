@@ -15317,19 +15317,19 @@ var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 );
 
 var _hoisted_2 = {
-  key: 0,
-  "class": "flex flex-row"
+  key: 0
 };
 var _hoisted_3 = ["href"];
 var _hoisted_4 = {
   method: "POST",
-  action: "/logout"
+  action: "/logout",
+  "class": "inline-block"
 };
 var _hoisted_5 = ["value"];
 
 var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   type: "submit",
-  "class": "inline-block text-sm px-4 py-2 leading-none border bg-white rounded text-teal-500 border-white mt-4 lg:mt-0 ml-4 lg:ml-2 hover:shadow-lg"
+  "class": "text-sm px-4 py-2 leading-none border bg-white rounded text-teal-500 border-white mt-4 lg:mt-0 ml-4 lg:ml-2 hover:shadow-lg"
 }, " ログアウト ", -1
 /* HOISTED */
 );

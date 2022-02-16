@@ -28,18 +28,18 @@
             </a>
         </div>
 
-        <div v-if="isLogin" class="flex flex-row">
+        <div v-if="isLogin">
             <a
                 :href="`/user/${userId}`"
                 class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0 hover:shadow-lg"
                 >マイページ</a
             >
 
-            <form method="POST" action="/logout">
+            <form method="POST" action="/logout" class="inline-block">
                 <input type="hidden" name="_token" :value="csrf" />
                 <button
                     type="submit"
-                    class="inline-block text-sm px-4 py-2 leading-none border bg-white rounded text-teal-500 border-white mt-4 lg:mt-0 ml-4 lg:ml-2 hover:shadow-lg"
+                    class="text-sm px-4 py-2 leading-none border bg-white rounded text-teal-500 border-white mt-4 lg:mt-0 ml-4 lg:ml-2 hover:shadow-lg"
                 >
                     ログアウト
                 </button>
