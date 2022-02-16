@@ -12,7 +12,7 @@
         <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
     </head>
     <body id="app" class="antialiased">
-        <header-component></header-component>
+        <header-component :is-login={{ json_encode(auth()->check()) }} :csrf="{{ json_encode(csrf_token()) }}" :user-id="{{ auth()->check() ? auth()->user()->id : '' }}"></header-component>
 
         <main>
             @yield('content')

@@ -4,6 +4,7 @@ use App\Enums\PostState;
 use App\Http\Controllers\PostsController;
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,13 +26,9 @@ Route::get('/new', function () {
     return view('new');
 })->name('new');
 
-Route::get('/sign_in', function () {
-    return view('auth.signIn');
-})->name('signIn');
-
-Route::get('/sign_up', function () {
-    return view('auth.signUp');
-})->name('signUp');
+Route::get('/user/{user}', function (User $user) {
+    return view('user.index', ['username' => $user->name]);
+})->middleware('auth');
 
 Route::get('/woops', function () {
     throw new \Exception('Woops');

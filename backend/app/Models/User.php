@@ -43,13 +43,13 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function username(): Attribute
-    {
-        return new Attribute(
-            fn ($value) => ucwords($value),
-            fn ($value) => strtolower($value)
-        );
-    }
+    // public function username(): Attribute
+    // {
+    //     return new Attribute(
+    //         fn ($value) => ucwords($value),
+    //         fn ($value) => strtolower($value)
+    //     );
+    // }
 
     public function posts()
     {

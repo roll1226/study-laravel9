@@ -16,8 +16,8 @@ return new class extends Migration
     {
         Schema::table('posts', function (Blueprint $table) {
             //
-
             $table->foreignIdFor(Category::class)->constrained();
+            $table->index(['category_id']);
         });
     }
 

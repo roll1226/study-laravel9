@@ -28,16 +28,34 @@
             </a>
         </div>
 
-        <div>
+        <div v-if="isLogin" class="flex flex-row">
             <a
-                href="/sign_in"
+                :href="`/user/${userId}`"
                 class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0 hover:shadow-lg"
-                >Sign in</a
+                >マイページ</a
+            >
+
+            <form method="POST" action="/logout">
+                <input type="hidden" name="_token" :value="csrf" />
+                <button
+                    type="submit"
+                    class="inline-block text-sm px-4 py-2 leading-none border bg-white rounded text-teal-500 border-white mt-4 lg:mt-0 ml-4 lg:ml-2 hover:shadow-lg"
+                >
+                    ログアウト
+                </button>
+            </form>
+        </div>
+
+        <div v-else>
+            <a
+                href="/login"
+                class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white mt-4 lg:mt-0 hover:shadow-lg"
+                >ログイン</a
             >
             <a
-                href="/sign_up"
+                href="/register"
                 class="inline-block text-sm px-4 py-2 leading-none border bg-white rounded text-teal-500 border-white mt-4 lg:mt-0 ml-4 lg:ml-2 hover:shadow-lg"
-                >Sign up</a
+                >アカウント作成</a
             >
         </div>
     </div>
@@ -58,6 +76,12 @@ export default defineComponent({
             type: Boolean,
             default: false,
         },
+        isLogin: Boolean,
+        csrf: {
+            type: String,
+            required: true,
+        },
+        userId: String,
     },
 
     setup() {},

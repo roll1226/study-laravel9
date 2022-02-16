@@ -35,10 +35,18 @@
                 </button>
             </div>
 
-            <menu-component type="pc"></menu-component>
+            <menu-component
+                type="pc"
+                :isLogin="isLogin"
+                :csrf="csrf"
+                :userId="userId"
+            ></menu-component>
             <menu-component
                 type="media"
                 :isClickMenu="isClickMenu"
+                :isLogin="isLogin"
+                :csrf="csrf"
+                :userId="userId"
             ></menu-component>
         </nav>
     </header>
@@ -51,6 +59,15 @@ import MenuComponent from "./Menu.vue";
 export default defineComponent({
     components: {
         MenuComponent,
+    },
+
+    props: {
+        isLogin: Boolean,
+        csrf: {
+            type: String,
+            required: true,
+        },
+        userId: String
     },
 
     setup() {

@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
-@section('title', 'ログイン')
+@section('title', $username)
 
 @section('content')
-<p>ログイン</p>
+<p>マイページ</p>
 @endsection
