@@ -182,6 +182,11 @@ return [
          * Fortify Service Providers...
          */
         App\Providers\FortifyServiceProvider::class,
+
+        /**
+         * Repository pattern Providers...
+         */
+        App\Providers\PostServiceProvider::class
     ],
 
     /*

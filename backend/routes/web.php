@@ -1,9 +1,10 @@
 <?php
 
 use App\Enums\PostState;
-use App\Http\Controllers\PostsController;
+use App\Http\Controllers\PostController;
 use App\Models\Post;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -30,6 +31,9 @@ Route::get('/user/{user}', function (User $user) {
     return view('user.index', ['username' => $user->name]);
 })->middleware('auth');
 
+Route::get('/post/{post}', [PostController::class, 'getPostByPostId']);
+
+// 勉強用ルート
 Route::get('/woops', function () {
     throw new \Exception('Woops');
 });
