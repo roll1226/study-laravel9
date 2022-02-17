@@ -31,7 +31,7 @@ Route::get('/user/{user}', function (User $user) {
     return view('user.index', ['username' => $user->name]);
 })->middleware('auth');
 
-Route::get('/post/{post}', [PostController::class, 'getPostByPostId']);
+Route::get('/post/{post}', [PostController::class, 'showPost']);
 
 // 勉強用ルート
 Route::get('/woops', function () {
@@ -52,7 +52,7 @@ Route::get('/blade', function () {
     return Blade::render('{{ $greeting }}, @if (true) World @else Folks @endif', ['greeting' => 'Hello']);
 });
 
-Route::controller(PostsController::class)->group(function () {
+Route::controller(PostController::class)->group(function () {
     Route::get('/posts', 'index');
     Route::get('/posts/{post}', 'show');
     Route::post('/posts', 'store');

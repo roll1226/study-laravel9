@@ -6,10 +6,12 @@ interface PostRepositoryInterface
 {
     public function getPosts();
     public function getPostByPostId($id);
-    public function getPostsFilterRanking();
-    public function getFilterPostByRanking();
-    public function getFilterPostByCategory();
-    public function getFilterPostByUserId($id);
+    public function getFilterPostsByRanking();
+    public function getFilterPostsByCategory($id);
+    public function getFilterPostsByCreateAt();
+    public function getFilterPostsByUserId($id);
+    public function getThreeNewPosts();
+    public function getThreePostsFilterRanking();
 
     public function createPost($user_id, $title, $image, $category_id);
 

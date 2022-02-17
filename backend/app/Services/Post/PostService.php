@@ -19,20 +19,39 @@ class postService implements PostServiceInterface
     {
         return $this->post_repository->getPosts();
     }
+
     public function getPostByPostId($id)
     {
         return $this->post_repository->getPostByPostId($id);
     }
+
     public function getPostsFilterRanking()
     {
     }
+
     public function getFilterPostByRanking()
     {
     }
+
     public function getFilterPostByCategory()
     {
     }
+
     public function getFilterPostByUserId($id)
+    {
+    }
+
+    public function getThreeNewPosts()
+    {
+        return $this->post_repository->getThreeNewPosts();
+    }
+
+    public function getThreePostsFilterRanking()
+    {
+        return $this->post_repository->getThreePostsFilterRanking();
+    }
+
+    public function getFilterPostByCreateAt()
     {
     }
 

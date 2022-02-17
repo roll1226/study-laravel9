@@ -13,13 +13,23 @@ class PostController extends Controller
         $this->post_service = $post_service;
     }
 
-    public function getPosts()
+    public function showTop()
     {
-        return $this->post_service->getPosts();
+        $threeNewPosts = $this->post_service->getThreeNewPosts();
+        $threeFilterByRankingPosts = $this->post_service->getThreePostsFilterRanking();
+
+        return view(
+            'welcome',
+            [
+                'newPosts' => $threeNewPosts,
+                'filterByRankingPost' => $threeFilterByRankingPosts
+            ]
+        );
     }
 
-    public function getPostByPostId($id)
+    public function showPost($id)
     {
-        dd($this->post_service->getPostByPostId($id));
+        $post = $this->post_service->getPostByPostId($id);
+        return view('post.show', ['post' => $post]);
     }
 }
