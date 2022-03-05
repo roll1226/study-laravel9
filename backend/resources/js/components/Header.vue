@@ -69,7 +69,10 @@ export default defineComponent({
             type: String,
             required: true,
         },
-        userId: String,
+        userId: {
+            type: String,
+            required: false,
+        },
     },
 
     setup() {

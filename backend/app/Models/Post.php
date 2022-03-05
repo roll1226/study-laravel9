@@ -16,9 +16,20 @@ class Post extends Model
         'user_name'
     ];
 
-    // protected $casts = [
-    //     'state' => PostState::class
-    // ];
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
 
     public function niceCount(): Attribute
     {
@@ -38,6 +49,13 @@ class Post extends Model
     {
         return Attribute::get(function () {
             return $this->user->name;
+        });
+    }
+
+    public function postImages(): Attribute
+    {
+        return Attribute::get(function () {
+            return $this->images;
         });
     }
 

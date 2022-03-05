@@ -13,7 +13,7 @@ class PostController extends Controller
         $this->post_service = $post_service;
     }
 
-    public function showTop()
+    public function showHome()
     {
         $threeNewPosts = $this->post_service->getThreeNewPosts();
         $threeFilterByRankingPosts = $this->post_service->getThreePostsFilterRanking();
@@ -22,7 +22,7 @@ class PostController extends Controller
             'welcome',
             [
                 'newPosts' => $threeNewPosts,
-                'filterByRankingPost' => $threeFilterByRankingPosts
+                'filterByRankingPosts' => $threeFilterByRankingPosts
             ]
         );
     }

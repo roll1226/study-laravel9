@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class PostImage extends Model
 {
     use HasFactory;
+
+    public function getImage()
+    {
+        return $this->image_name;
+    }
 }
