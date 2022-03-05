@@ -19,11 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PostController::class, 'showHome'])->name('home');
-
-Route::get('/new', function () {
-    return view('new');
-})->name('new');
+Route::controller(PostController::class)->group(function () {
+    Route::get('/', 'showHome');
+    Route::get('/new', 'showNew');
+    Route::get('/ranking', 'showRanking');
+});
 
 Route::get('/user/{user}', function (User $user) {
     return view('user.index', ['username' => $user->name]);
@@ -31,7 +31,9 @@ Route::get('/user/{user}', function (User $user) {
 
 Route::get('/post/{post}', [PostController::class, 'showPost']);
 
-// 勉強用ルート
+/**
+ * 勉強用ルート
+ */
 Route::get('/woops', function () {
     throw new \Exception('Woops');
 });
@@ -50,11 +52,11 @@ Route::get('/blade', function () {
     return Blade::render('{{ $greeting }}, @if (true) World @else Folks @endif', ['greeting' => 'Hello']);
 });
 
-Route::controller(PostController::class)->group(function () {
-    Route::get('/posts', 'index');
-    Route::get('/posts/{post}', 'show');
-    Route::post('/posts', 'store');
-});
+// Route::controller(PostController::class)->group(function () {
+//     Route::get('/posts', 'index');
+//     Route::get('/posts/{post}', 'show');
+//     Route::post('/posts', 'store');
+// });
 
 Route::get('/users/{user}/posts/{post}', function (User $user, Post $post) {
     return $post;

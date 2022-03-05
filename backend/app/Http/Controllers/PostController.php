@@ -27,6 +27,30 @@ class PostController extends Controller
         );
     }
 
+    public function showNew()
+    {
+        $newPosts = $this->post_service->getNewPosts();
+
+        return view(
+            'new',
+            [
+                'newPosts' => $newPosts
+            ]
+        );
+    }
+
+    public function showRanking()
+    {
+        $filterByRankingPosts = $this->post_service->getFilterByRankingPosts();
+
+        return view(
+            'ranking',
+            [
+                'filterByRankingPosts' => $filterByRankingPosts
+            ]
+        );
+    }
+
     public function showPost($id)
     {
         $post = $this->post_service->getPostByPostId($id);

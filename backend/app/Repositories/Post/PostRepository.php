@@ -18,6 +18,11 @@ class PostRepository implements PostRepositoryInterface
         return Post::find($id);
     }
 
+    public function getNewPosts()
+    {
+        return Post::orderBy('created_at', 'desc')->paginate(12);
+    }
+
     public function getFilterPostsByRanking()
     {
         return Post::leftJoin('nices', 'posts.id', 'nices.post_id')
@@ -37,7 +42,7 @@ class PostRepository implements PostRepositoryInterface
             ->groupBy('posts.updated_at')
             ->groupBy('posts.category_id')
             ->orderBy('nice_count', 'desc')
-            ->get();
+            ->paginate(12);
     }
 
     public function getFilterPostsByCategory($id)

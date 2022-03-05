@@ -6,13 +6,13 @@ interface PostServiceInterface
 {
     public function getPosts();
     public function getPostByPostId($id);
-    public function getPostsFilterRanking();
-    public function getFilterPostByRanking();
+    public function getNewPosts();
+    public function getFilterByRankingPosts();
     public function getFilterPostByCategory();
     public function getFilterPostByUserId($id);
     public function getThreeNewPosts();
     public function getThreePostsFilterRanking();
-    public function  getFilterPostByCreateAt();
+    public function getFilterPostByCreateAt();
 
     public function createPost($user_id, $title, $image, $category_id);
 
