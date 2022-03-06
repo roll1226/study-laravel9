@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use App\Services\Post\PostServiceInterface;
 
 class PostController extends Controller
@@ -51,9 +52,8 @@ class PostController extends Controller
         );
     }
 
-    public function showPost($id)
+    public function showPost(Post $post)
     {
-        $post = $this->post_service->getPostByPostId($id);
         return view('post.show', ['post' => $post]);
     }
 }

@@ -24,14 +24,13 @@ Route::controller(PostController::class)->group(function () {
     Route::get('/', 'showHome');
     Route::get('/new', 'showNew');
     Route::get('/ranking', 'showRanking');
+    Route::get('/post/{post}', 'showPost');
 });
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/user_list', 'showUserList');
     Route::get('/user/{user}', 'showMyPage')->middleware('auth');
 });
-
-Route::get('/post/{post}', [PostController::class, 'showPost']);
 
 /**
  * 勉強用ルート
