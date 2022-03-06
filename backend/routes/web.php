@@ -2,6 +2,7 @@
 
 use App\Enums\PostState;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Models\Post;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -23,6 +24,10 @@ Route::controller(PostController::class)->group(function () {
     Route::get('/', 'showHome');
     Route::get('/new', 'showNew');
     Route::get('/ranking', 'showRanking');
+});
+
+Route::controller(UserController::class)->group(function () {
+    Route::get('/user_list', 'showUserList');
 });
 
 Route::get('/user/{user}', function (User $user) {

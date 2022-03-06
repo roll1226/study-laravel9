@@ -51,6 +51,18 @@ class User extends Authenticatable
     //     );
     // }
 
+    public function postsCount(): Attribute
+    {
+        return Attribute::get(function () {
+            return $this->posts->count();
+        });
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
     public function posts()
     {
         return $this->hasMany(Post::class);

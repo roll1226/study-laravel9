@@ -186,7 +186,8 @@ return [
         /**
          * Repository pattern Providers...
          */
-        App\Providers\PostServiceProvider::class
+        App\Providers\PostServiceProvider::class,
+        App\Providers\UserServiceProvider::class,
     ],
 
     /*
