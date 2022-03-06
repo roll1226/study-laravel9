@@ -28,11 +28,8 @@ Route::controller(PostController::class)->group(function () {
 
 Route::controller(UserController::class)->group(function () {
     Route::get('/user_list', 'showUserList');
+    Route::get('/user/{user}', 'showMyPage')->middleware('auth');
 });
-
-Route::get('/user/{user}', function (User $user) {
-    return view('user.index', ['username' => $user->name]);
-})->middleware('auth');
 
 Route::get('/post/{post}', [PostController::class, 'showPost']);
 

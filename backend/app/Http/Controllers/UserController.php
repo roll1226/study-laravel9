@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Services\User\UserServiceInterface;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Pagination\Paginator;
 
 class UserController extends Controller
 {
@@ -23,5 +25,17 @@ class UserController extends Controller
         return view('user.list', [
             'users' => $users
         ]);
+    }
+
+    public function showMyPage(User $user, Request $request)
+    {
+        $userPostsPaginate = new Paginator(
+            $user->posts,
+            12,
+            null,
+            ['path' => $request->url()]
+        );
+
+        return view('user.index', ['user' => $user, 'posts' => $userPostsPaginate]);
     }
 }
